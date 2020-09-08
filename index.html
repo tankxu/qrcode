@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>方格二维码</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+
+	<link rel="icon" sizes="16x16 32x32 48x48 64x64" href="images/favicon/favicon.ico"/>
+	<!--[if IE]>
+	<link rel="shortcut icon" href="images/favicon/favicon.ico"/>
+	<![endif]-->
+	<!-- Optional: Android & iPhone-->
+	<link rel="apple-touch-icon-precomposed" href="images/favicon/favicon-152.png"/>
+	<!-- Optional: IE10 Tile.-->
+	<meta name="msapplication-TileColor" content="#FFFFFF"/>
+	<meta name="msapplication-TileImage" content="images/favicon/favicon-144.png"/>
+	<!-- Optional: ipads, androids, iphones, ...-->
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicon/favicon-152.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicon/favicon-144.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicon/favicon-120.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon/favicon-114.png"/>
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicon/favicon-72.png"/>
+	<link rel="apple-touch-icon-precomposed" href="images/favicon/favicon-57.png"/>
+	
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.3.13/angular.min.js"></script>
+	<script type="text/javascript">
+		function focusOnMyInputBox(){
+		    document.getElementById("userinput").focus();
+		}
+	</script>
+</head>
+<body ng-app onLoad="focusOnMyInputBox()">
+	<div class="card">
+		<div class="input-bar">
+			<input id="userinput" type="text"  ng-model="content" placeholder="URL or TEXT">
+			<div class="ecc">
+					<span>ECC</span>
+				  <select ng-model="eccValue" ng-init="eccValue='L'">
+				  	<option value="L">Low</option>
+				  	<option value="M">Middle</option>
+				  	<option value="Q">Quality</option>
+				  	<option value="H">High</option>
+				  </select>
+			</div>
+		</div>
+		<div class="qr-area">
+			<div class="qr-code-default" ng-show="!content.length"></div>
+			<div class="qr-code" ng-show="content.length"><img class="animated fadeIn" src="http://api.qrserver.com/v1/create-qr-code/?data={{content}}&size=240x240&ecc={{eccValue}}&margin=20"></div>
+			<div class="link animated flipInX" ng-show="!content.length" >
+				<a style="background: #C8D4DE;">JPG</a>
+				<a style="background: #C8D4DE;">PNG</a>
+				<a style="background: #C8D4DE;">EPS</a>
+				<a style="background: #C8D4DE;">SVG</a>
+			</div>
+			<div class="link animated flipInX" ng-show="content.length" >
+				<a href="http://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=480x480&ecc={{eccValue}}&margin=40&format=jpg" style="background: #EF505E;">JPG</a>
+				<a href="http://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=480x480&ecc={{eccValue}}&margin=40&format=png" style="background: #6BC3E8;">PNG</a>
+				<a href="http://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=240x240&ecc={{eccValue}}&margin=20&format=eps" style="background: #FCB84E;">EPS</a>
+				<a href="http://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=200x200&ecc={{eccValue}}&format=svg" style="background: #3076BB;">SVG</a>
+			</div>
+		</div>
+		<div class="cli-link">识别二维码：<a href="https://cli.im/deqr">https://cli.im/deqr</a></div>
+	</div>
+	<div class="footer">
+		<!-- <div class="title">方格二维码</div> -->
+		<div class="url">DESIGNED BY FOOOGE.COM</div>
+		<p style="font-size: 11px; line-height: 10px;">Add ECC Option by tankxu.com</p>
+	</div>
+</body>
+</html>

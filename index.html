@@ -24,7 +24,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicon/favicon-72.png"/>
 	<link rel="apple-touch-icon-precomposed" href="images/favicon/favicon-57.png"/>
 	
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.3.13/angular.min.js"></script>
+	<script type="text/javascript" src="https://apps.bdimg.com/libs/angular.js/1.3.13/angular.min.js"></script>
 	<script type="text/javascript">
 		function focusOnMyInputBox(){
 		    document.getElementById("userinput").focus();
@@ -47,7 +47,7 @@
 		</div>
 		<div class="qr-area">
 			<div class="qr-code-default" ng-show="!content.length"></div>
-			<div class="qr-code" ng-show="content.length"><img class="animated fadeIn" src="http://api.qrserver.com/v1/create-qr-code/?data={{content}}&size=240x240&ecc={{eccValue}}&margin=20"></div>
+			<div class="qr-code" ng-show="content.length"><img class="animated fadeIn" src="https://api.qrserver.com/v1/create-qr-code/?data={{content}}&size=240x240&ecc={{eccValue}}&margin=20"></div>
 			<div class="link animated flipInX" ng-show="!content.length" >
 				<a style="background: #C8D4DE;">JPG</a>
 				<a style="background: #C8D4DE;">PNG</a>
@@ -55,10 +55,10 @@
 				<a style="background: #C8D4DE;">SVG</a>
 			</div>
 			<div class="link animated flipInX" ng-show="content.length" >
-				<a href="http://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=480x480&ecc={{eccValue}}&margin=40&format=jpg" style="background: #EF505E;">JPG</a>
-				<a href="http://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=480x480&ecc={{eccValue}}&margin=40&format=png" style="background: #6BC3E8;">PNG</a>
-				<a href="http://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=240x240&ecc={{eccValue}}&margin=20&format=eps" style="background: #FCB84E;">EPS</a>
-				<a href="http://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=200x200&ecc={{eccValue}}&format=svg" style="background: #3076BB;">SVG</a>
+				<a href="https://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=480x480&ecc={{eccValue}}&margin=40&format=jpg" style="background: #EF505E;">JPG</a>
+				<a href="https://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=480x480&ecc={{eccValue}}&margin=40&format=png" style="background: #6BC3E8;">PNG</a>
+				<a href="https://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=240x240&ecc={{eccValue}}&margin=20&format=eps" style="background: #FCB84E;">EPS</a>
+				<a href="https://api.qrserver.com/v1/create-qr-code/?data={{content}}&download=1&size=200x200&ecc={{eccValue}}&format=svg" style="background: #3076BB;">SVG</a>
 			</div>
 		</div>
 		<div class="cli-link">识别二维码：<a href="https://cli.im/deqr">https://cli.im/deqr</a></div>
